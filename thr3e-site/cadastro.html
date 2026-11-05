@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta | THR3E Web Security</title>
+  <meta name="theme-color" content="#360248">
+  <link rel="icon" type="image/png" href="IMGS/favicon.png">
+  <link rel="preload" href="FONTS/dela-gothic-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/login.css">
+</head>
+<body>
+  <header class="site-header site-header--end">
+    <a class="btn btn-ghost btn-small" href="index.html">Voltar ao site</a>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-intro">
+      <img src="IMGS/logo.png" alt="" width="691" height="240">
+      <h1>Crie sua conta e peça sua primeira auditoria.</h1>
+      <p>Com a conta você descreve o que precisa proteger, marca reuniões com a equipe e acompanha cada pedido em um só lugar.</p>
+    </section>
+
+    <section class="panel-cream on-cream" aria-labelledby="titulo-cadastro">
+      <h2 class="title-md" id="titulo-cadastro">Criar conta</h2>
+
+      <form id="form-cadastro" novalidate>
+        <div class="field">
+          <label for="cad-nome">Nome</label>
+          <input class="input" id="cad-nome" name="name" type="text" autocomplete="name" maxlength="80" required>
+          <p class="field-error" id="cad-nome-erro"></p>
+        </div>
+
+        <div class="field">
+          <label for="cad-email">E-mail</label>
+          <input class="input" id="cad-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          <p class="field-error" id="cad-email-erro"></p>
+        </div>
+
+        <div class="field">
+          <label for="cad-senha">Senha</label>
+          <div class="input-row">
+            <input class="input" id="cad-senha" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="72" required aria-describedby="cad-senha-dica">
+            <button class="btn btn-ghost btn-small" type="button" data-toggle-password="cad-senha" aria-pressed="false">Mostrar</button>
+          </div>
+          <p class="field-hint" id="cad-senha-dica">De 8 a 72 caracteres.</p>
+          <p class="field-error" id="cad-senha-erro"></p>
+        </div>
+
+        <div class="field">
+          <label for="cad-confirma">Repita a senha</label>
+          <input class="input" id="cad-confirma" name="confirm" type="password" autocomplete="new-password" required>
+          <p class="field-error" id="cad-confirma-erro"></p>
+        </div>
+
+        <p class="form-msg" id="cad-msg" role="alert"></p>
+        <div class="form-actions">
+          <button class="btn btn-dark" type="submit">Criar conta</button>
+        </div>
+      </form>
+
+      <p class="auth-switch">Já tem conta? <a href="login.html">Entrar</a></p>
+    </section>
+  </main>
+
+  <script src="JAVA/api.js"></script>
+  <script src="JAVA/cadastro.js"></script>
+</body>
+</html>

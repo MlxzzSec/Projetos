@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>THR3E Web Security | Segurança para sites e sistemas web</title>
+  <meta name="description" content="Teste de invasão, auditoria de código e revisão de login para sites e sistemas que já estão no ar.">
+  <meta name="theme-color" content="#360248">
+  <link rel="icon" type="image/png" href="IMGS/favicon.png">
+  <link rel="preload" href="FONTS/dela-gothic-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/servicos.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="THR3E Web Security, página inicial">
+      <img src="IMGS/logo.png" alt="THR3E Web Security" width="691" height="240">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#metodo">Como trabalhamos</a></li>
+        <li><a href="#senha">Teste sua senha</a></li>
+      </ul>
+      <a class="btn btn-ghost btn-small" href="login.html">Entrar</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <h1 class="hero-logo" id="titulo-hero">
+        <img src="IMGS/logo.png" alt="THR3E Web Security" width="691" height="240">
+      </h1>
+      <p class="hero-statement">Encontramos a falha antes de quem ataca.</p>
+      <p class="hero-sub">Auditoria, teste de invasão e revisão de código para sites e sistemas que já estão no ar, com relatório claro e correção acompanhada.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="cadastro.html">Criar conta</a>
+        <a class="btn btn-ghost" href="servicos.html">Ver serviços</a>
+      </div>
+    </section>
+
+    <section class="section band on-cream" id="servicos" aria-labelledby="titulo-servicos">
+      <div class="section-inner">
+        <h2 class="section-title" id="titulo-servicos">O que protegemos no seu sistema</h2>
+        <ul class="service-list">
+          <li class="service">
+            <h3>Teste de invasão</h3>
+            <p>Simulamos o ataque de alguém de fora contra seu site ou API e mostramos exatamente por onde ele entraria.</p>
+            <a class="service-more" href="servicos.html#teste-de-invasao">Ver como funciona<span class="visually-hidden">: Teste de invasão</span> →</a>
+          </li>
+          <li class="service">
+            <h3>Auditoria de código</h3>
+            <p>Lemos o código da aplicação atrás de falhas como injeção de SQL, XSS e validações que estão faltando.</p>
+            <a class="service-more" href="servicos.html#auditoria-de-codigo">Ver como funciona<span class="visually-hidden">: Auditoria de código</span> →</a>
+          </li>
+          <li class="service">
+            <h3>Login e sessões</h3>
+            <p>Revisamos cadastro, login, recuperação de senha e cookies para que contas de usuários não sejam tomadas.</p>
+            <a class="service-more" href="servicos.html#login-e-sessoes">Ver como funciona<span class="visually-hidden">: Login e sessões</span> →</a>
+          </li>
+          <li class="service">
+            <h3>Monitoramento contínuo</h3>
+            <p>Acompanhamos acessos suspeitos e avisamos antes que uma tentativa vire incidente.</p>
+            <a class="service-more" href="servicos.html#monitoramento-continuo">Ver como funciona<span class="visually-hidden">: Monitoramento contínuo</span> →</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="metodo" aria-labelledby="titulo-metodo">
+      <div class="section-inner">
+        <h2 class="section-title" id="titulo-metodo">Como trabalhamos</h2>
+        <ol class="steps">
+          <li class="step">
+            <h3>Mapeamos</h3>
+            <p>Levantamos páginas, APIs e dados expostos do que será testado.</p>
+          </li>
+          <li class="step">
+            <h3>Testamos</h3>
+            <p>Procuramos falhas na ordem em que um atacante procuraria.</p>
+          </li>
+          <li class="step">
+            <h3>Relatamos</h3>
+            <p>Você recebe cada falha com gravidade, prova e passo a passo de correção.</p>
+          </li>
+          <li class="step">
+            <h3>Verificamos de novo</h3>
+            <p>Depois da correção, testamos outra vez para confirmar que a falha fechou.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="senha" aria-labelledby="titulo-senha">
+      <div class="section-inner checker">
+        <div class="checker-copy">
+          <h2 class="section-title" id="titulo-senha">Sua senha aguenta um ataque?</h2>
+          <p>Digite uma senha para estimar quanto tempo um atacante levaria para descobri-la.</p>
+          <p>O que você digita fica no seu navegador e não é enviado a lugar nenhum.</p>
+        </div>
+
+        <div class="panel-dark">
+          <div class="field">
+            <label for="senha-teste">Senha para testar</label>
+            <div class="input-row">
+              <input class="input" id="senha-teste" type="password" autocomplete="off" spellcheck="false" aria-describedby="senha-resultado">
+              <button class="btn btn-ghost btn-small" type="button" id="senha-mostrar" aria-pressed="false">Mostrar</button>
+            </div>
+          </div>
+          <div class="meter" aria-hidden="true"><div class="meter-fill" id="senha-barra"></div></div>
+          <div id="senha-resultado" aria-live="polite">
+            <p class="field-hint">Comece a digitar para ver o resultado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titulo-cta">
+      <div class="section-inner cta-inner">
+        <div>
+          <h2 class="cta-title" id="titulo-cta">Tem um sistema no ar? Peça uma auditoria.</h2>
+          <p class="cta-text">Crie sua conta, descreva o que precisa proteger e acompanhe a solicitação pelo painel.</p>
+        </div>
+        <a class="btn btn-primary" href="cadastro.html">Criar conta</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html" aria-label="THR3E Web Security, página inicial">
+      <img src="IMGS/logo.png" alt="THR3E Web Security" width="691" height="240">
+    </a>
+    <p>© 2026 THR3E Web Security. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="JAVA/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* Estilos do painel do cliente (antes inline em dashboard.html; o CSP não permite style inline). */
+.client-tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 1.5rem}
+.client-tab{border:2px solid var(--line);background:transparent;color:var(--cream);padding:.65rem 1rem;border-radius:999px;font:700 1rem var(--font-body);cursor:pointer}
+.client-tab.active{background:var(--cream);color:var(--violet-900)}
+.client-view[hidden]{display:none}
+.client-card{border-top:2px solid var(--line);padding:1.15rem 0;display:grid;gap:.45rem}
+.client-card h3{margin:0}
+.client-meta{font-size:.92rem;color:var(--cream-soft)}
+.client-details{white-space:pre-wrap;color:var(--cream-soft)}
+.status-badge{display:inline-flex;width:max-content;padding:.28rem .6rem;border-radius:999px;background:rgba(245,232,218,.12);font-size:.84rem;font-weight:800}
+.chat-box{display:grid;gap:1rem}
+.chat-messages{display:grid;gap:.65rem;max-height:360px;overflow:auto;padding:.25rem}
+.chat-bubble{max-width:85%;padding:.75rem .9rem;border-radius:1rem;background:rgba(245,232,218,.09);justify-self:start;white-space:pre-wrap}
+.chat-bubble.mine{justify-self:end;background:var(--cream);color:var(--violet-900)}
+.chat-time{display:block;font-size:.72rem;opacity:.65;margin-top:.25rem}
+.chat-form{display:grid;gap:.7rem}
+.meeting-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.meeting-grid .full{grid-column:1/-1}
+@media(max-width:700px){.meeting-grid{grid-template-columns:1fr}
+.meeting-grid .full{grid-column:auto}
+}

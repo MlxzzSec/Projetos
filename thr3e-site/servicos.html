@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serviços | THR3E Web Security</title>
+  <meta name="description" content="Entenda o que é e como funciona cada serviço da THR3E: teste de invasão, auditoria de código, login e sessões e monitoramento contínuo.">
+  <meta name="theme-color" content="#360248">
+  <link rel="icon" type="image/png" href="IMGS/favicon.png">
+  <link rel="preload" href="FONTS/dela-gothic-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/servicos.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="THR3E Web Security, página inicial">
+      <img src="IMGS/logo.png" alt="THR3E Web Security" width="691" height="240">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="servicos.html" aria-current="page">Serviços</a></li>
+        <li><a href="index.html#metodo">Como trabalhamos</a></li>
+        <li><a href="index.html#senha">Teste sua senha</a></li>
+      </ul>
+      <a class="btn btn-ghost btn-small" href="login.html">Entrar</a>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="svc-main">
+    <section class="svc-intro" aria-labelledby="titulo-servicos">
+      <h1 class="svc-title" id="titulo-servicos">O que cada serviço faz</h1>
+      <p class="svc-lede">Escolha um serviço para ver o que ele é, o que fazemos na prática e o que você recebe no final.</p>
+    </section>
+
+    <div class="svc-tabs" role="tablist" aria-label="Serviços">
+      <button class="svc-tab" role="tab" type="button" id="aba-teste-de-invasao" aria-controls="teste-de-invasao" aria-selected="true">Teste de invasão</button>
+      <button class="svc-tab" role="tab" type="button" id="aba-auditoria-de-codigo" aria-controls="auditoria-de-codigo" aria-selected="false" tabindex="-1">Auditoria de código</button>
+      <button class="svc-tab" role="tab" type="button" id="aba-login-e-sessoes" aria-controls="login-e-sessoes" aria-selected="false" tabindex="-1">Login e sessões</button>
+      <button class="svc-tab" role="tab" type="button" id="aba-monitoramento-continuo" aria-controls="monitoramento-continuo" aria-selected="false" tabindex="-1">Monitoramento contínuo</button>
+    </div>
+
+    <!-- ===== Teste de invasão ===== -->
+    <section class="svc-panel" role="tabpanel" id="teste-de-invasao" aria-labelledby="aba-teste-de-invasao">
+      <h2 class="svc-panel-title">Teste de invasão</h2>
+      <p class="svc-summary">Um ataque de mentira, feito por nós e com a sua autorização, para descobrir o que alguém de fora conseguiria alcançar no seu site, sistema ou API.</p>
+
+      <div class="svc-grid">
+        <div class="svc-block">
+          <h3>O que é</h3>
+          <p>É olhar para o seu sistema do ponto de vista de quem quer entrar sem ser convidado. Em vez de só listar riscos possíveis, tentamos de fato passar pelas portas e mostramos o que abriu.</p>
+        </div>
+        <div class="svc-block">
+          <h3>O que fazemos</h3>
+          <ul>
+            <li>Mapeamos páginas, formulários, APIs e dados que estão expostos.</li>
+            <li>Procuramos falhas comuns, como injeção de SQL, controle de acesso mal feito, configurações inseguras e informações vazando.</li>
+            <li>Confirmamos cada falha na prática, para você não receber alarme falso.</li>
+            <li>Combinamos antes o que pode ser testado e em que horários, para não atrapalhar quem usa o sistema.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>O que você recebe</h3>
+          <ul>
+            <li>Relatório com cada falha encontrada e sua gravidade.</li>
+            <li>A prova de como chegamos lá, para o seu time reproduzir.</li>
+            <li>Passo a passo de correção, em ordem de prioridade.</li>
+            <li>Um novo teste depois da correção, para confirmar que fechou.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>Quando vale a pena</h3>
+          <p>Antes de lançar algo novo, depois de uma mudança grande, quando um cliente ou parceiro exige uma avaliação de segurança, ou quando o sistema nunca foi testado por alguém de fora.</p>
+        </div>
+      </div>
+
+      <p class="svc-note">Só testamos o que você autorizar por escrito, dentro do escopo combinado.</p>
+      <a class="btn btn-primary" href="dashboard.html">Pedir este serviço</a>
+    </section>
+
+    <!-- ===== Auditoria de código ===== -->
+    <section class="svc-panel" role="tabpanel" id="auditoria-de-codigo" aria-labelledby="aba-auditoria-de-codigo" hidden>
+      <h2 class="svc-panel-title">Auditoria de código</h2>
+      <p class="svc-summary">Uma leitura cuidadosa do código-fonte da aplicação atrás de falhas de segurança, antes que alguém as encontre pelo lado de fora.</p>
+
+      <div class="svc-grid">
+        <div class="svc-block">
+          <h3>O que é</h3>
+          <p>No teste de invasão olhamos o sistema de fora. Aqui olhamos por dentro: lemos o código que roda no servidor e no navegador e procuramos os descuidos que viram brechas.</p>
+        </div>
+        <div class="svc-block">
+          <h3>O que fazemos</h3>
+          <ul>
+            <li>Revisamos como o código fala com o banco de dados, atrás de injeção de SQL.</li>
+            <li>Checamos o que é mostrado na tela, atrás de XSS (código malicioso injetado em páginas).</li>
+            <li>Verificamos se os dados recebidos são validados e se o envio de arquivos é seguro.</li>
+            <li>Procuramos senhas e chaves esquecidas no código e bibliotecas desatualizadas.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>O que você recebe</h3>
+          <ul>
+            <li>Lista de achados com o trecho do código onde cada um está.</li>
+            <li>Explicação do risco em linguagem direta.</li>
+            <li>Sugestão de correção para cada ponto, com prioridade.</li>
+            <li>Boas práticas para o time não repetir o erro.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>Quando vale a pena</h3>
+          <p>Quando o sistema foi feito com pressa ou por várias pessoas, quando você herdou código de outra equipe, ou antes de o sistema crescer e passar a guardar mais dados de clientes.</p>
+        </div>
+      </div>
+
+      <p class="svc-note">Juntas, a auditoria de código e o teste de invasão cobrem mais do que cada uma sozinha: uma vê por dentro, a outra por fora.</p>
+      <a class="btn btn-primary" href="dashboard.html">Pedir este serviço</a>
+    </section>
+
+    <!-- ===== Login e sessões ===== -->
+    <section class="svc-panel" role="tabpanel" id="login-e-sessoes" aria-labelledby="aba-login-e-sessoes" hidden>
+      <h2 class="svc-panel-title">Login e sessões</h2>
+      <p class="svc-summary">Uma revisão de tudo o que decide quem é quem no seu sistema, para que a conta de um usuário não possa ser tomada por outra pessoa.</p>
+
+      <div class="svc-grid">
+        <div class="svc-block">
+          <h3>O que é</h3>
+          <p>Cadastro, login, recuperação de senha e o cookie que mantém o usuário conectado formam a porta da frente do sistema. Quando algum deles falha, a conta de alguém vai junto.</p>
+        </div>
+        <div class="svc-block">
+          <h3>O que fazemos</h3>
+          <ul>
+            <li>Vemos como as senhas são guardadas no banco.</li>
+            <li>Testamos se dá para tentar senhas sem limite, ou descobrir quais e-mails têm conta.</li>
+            <li>Analisamos o cookie de sessão: proteção, duração e troca depois do login.</li>
+            <li>Revisamos a recuperação de senha e se o botão sair realmente encerra a sessão.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>O que você recebe</h3>
+          <ul>
+            <li>Relatório do que está certo e do que precisa mudar.</li>
+            <li>Correções recomendadas para cada ponto, com prioridade.</li>
+            <li>Uma lista de conferência para você usar em novos sistemas.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>Quando vale a pena</h3>
+          <p>Sempre que o sistema tem contas de usuários, principalmente se guarda dados pessoais ou pagamentos, ou se já houve suspeita de acesso indevido.</p>
+        </div>
+      </div>
+
+      <p class="svc-note">É o serviço mais rápido de aplicar e costuma evitar os vazamentos mais comuns.</p>
+      <a class="btn btn-primary" href="dashboard.html">Pedir este serviço</a>
+    </section>
+
+    <!-- ===== Monitoramento contínuo ===== -->
+    <section class="svc-panel" role="tabpanel" id="monitoramento-continuo" aria-labelledby="aba-monitoramento-continuo" hidden>
+      <h2 class="svc-panel-title">Monitoramento contínuo</h2>
+      <p class="svc-summary">Acompanhamento do seu sistema depois da auditoria, para avisar quando alguém começa a procurar uma brecha, antes que a tentativa vire incidente.</p>
+
+      <div class="svc-grid">
+        <div class="svc-block">
+          <h3>O que é</h3>
+          <p>Uma auditoria mostra como o sistema está hoje. O monitoramento cuida do que acontece depois: novas versões, novas falhas descobertas no mercado e tentativas de ataque no dia a dia.</p>
+        </div>
+        <div class="svc-block">
+          <h3>O que fazemos</h3>
+          <ul>
+            <li>Observamos sinais de ataque, como muitas tentativas de login seguidas ou buscas por páginas que não existem.</li>
+            <li>Acompanhamos itens que vencem ou envelhecem, como certificados e bibliotecas.</li>
+            <li>Combinamos com você o que acompanhar e como prefere ser avisado.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>O que você recebe</h3>
+          <ul>
+            <li>Aviso quando algo suspeito aparece, com o que recomendamos fazer.</li>
+            <li>Resumo periódico do que foi observado.</li>
+            <li>Um canal direto para tirar dúvidas pelo painel.</li>
+          </ul>
+        </div>
+        <div class="svc-block">
+          <h3>Quando vale a pena</h3>
+          <p>Depois de corrigir as falhas de uma auditoria, ou quando o sistema está no ar o tempo todo e guarda dados de clientes.</p>
+        </div>
+      </div>
+
+      <p class="svc-note">Os avisos são combinados por escrito: você sabe o que acompanhamos e o que fica fora.</p>
+      <a class="btn btn-primary" href="dashboard.html">Pedir este serviço</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html" aria-label="THR3E Web Security, página inicial">
+      <img src="IMGS/logo.png" alt="THR3E Web Security" width="691" height="240">
+    </a>
+    <p>© 2026 THR3E Web Security. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="JAVA/servicos.js"></script>
+</body>
+</html>

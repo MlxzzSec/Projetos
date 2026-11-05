@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | THR3E Web Security</title>
+  <meta name="theme-color" content="#360248">
+  <link rel="icon" type="image/png" href="IMGS/favicon.png">
+  <link rel="preload" href="FONTS/dela-gothic-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/login.css">
+</head>
+<body>
+  <header class="site-header site-header--end">
+    <a class="btn btn-ghost btn-small" href="index.html">Voltar ao site</a>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-intro">
+      <img src="IMGS/logo.png" alt="" width="691" height="240">
+      <h1>Acompanhe suas solicitações de auditoria.</h1>
+      <p>Entre ou crie uma conta para pedir uma auditoria e ver o andamento de cada pedido em um só lugar.</p>
+    </section>
+
+    <section class="panel-cream on-cream" aria-label="Acesso à conta">
+      <div class="tabs" role="tablist" aria-label="Escolha uma opção">
+        <button class="tab" role="tab" id="aba-entrar" aria-controls="painel-entrar" aria-selected="true" type="button">Entrar</button>
+        <button class="tab" role="tab" id="aba-cadastro" aria-controls="painel-cadastro" aria-selected="false" tabindex="-1" type="button">Criar conta</button>
+      </div>
+
+      <form id="painel-entrar" role="tabpanel" aria-labelledby="aba-entrar" novalidate>
+        <div class="field">
+          <label for="login-email">E-mail</label>
+          <input class="input" id="login-email" name="email" type="email" autocomplete="username" required>
+          <p class="field-error" id="login-email-erro"></p>
+        </div>
+        <div class="field">
+          <label for="login-senha">Senha</label>
+          <div class="input-row">
+            <input class="input" id="login-senha" name="password" type="password" autocomplete="current-password" required>
+            <button class="btn btn-ghost btn-small" type="button" data-toggle-password="login-senha" aria-pressed="false">Mostrar</button>
+          </div>
+          <p class="field-error" id="login-senha-erro"></p>
+        </div>
+        <p class="form-msg" id="login-msg" role="alert"></p>
+        <div class="form-actions">
+          <button class="btn btn-dark" type="submit">Entrar</button>
+        </div>
+        <p class="auth-switch">Ainda não tem conta? <a href="cadastro.html">Criar conta</a></p>
+      </form>
+
+      <form id="painel-cadastro" role="tabpanel" aria-labelledby="aba-cadastro" hidden novalidate>
+        <div class="field">
+          <label for="cad-nome">Nome</label>
+          <input class="input" id="cad-nome" name="name" type="text" autocomplete="name" maxlength="80" required>
+          <p class="field-error" id="cad-nome-erro"></p>
+        </div>
+        <div class="field">
+          <label for="cad-email">E-mail</label>
+          <input class="input" id="cad-email" name="email" type="email" autocomplete="email" required>
+          <p class="field-error" id="cad-email-erro"></p>
+        </div>
+        <div class="field">
+          <label for="cad-senha">Senha</label>
+          <div class="input-row">
+            <input class="input" id="cad-senha" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="72" required aria-describedby="cad-senha-dica">
+            <button class="btn btn-ghost btn-small" type="button" data-toggle-password="cad-senha" aria-pressed="false">Mostrar</button>
+          </div>
+          <p class="field-hint" id="cad-senha-dica">De 8 a 72 caracteres.</p>
+          <p class="field-error" id="cad-senha-erro"></p>
+        </div>
+        <div class="field">
+          <label for="cad-confirma">Repita a senha</label>
+          <input class="input" id="cad-confirma" name="confirm" type="password" autocomplete="new-password" required>
+          <p class="field-error" id="cad-confirma-erro"></p>
+        </div>
+        <p class="form-msg" id="cad-msg" role="alert"></p>
+        <div class="form-actions">
+          <button class="btn btn-dark" type="submit">Criar conta</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="JAVA/api.js"></script>
+  <script src="JAVA/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/*
+ * Página de serviços e links dos serviços na home.
+ * Usa as variáveis de cor de style.css (com valores de reserva).
+ */
+
+/* ---------- links dos 4 serviços na home (index.html) ---------- */
+.service { position: relative; }
+.service-more {
+  display: inline-block;
+  margin-top: .6rem;
+  font-weight: 800;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+/* a área clicável é o item inteiro, mas só existe um link por item */
+.service-more::after { content: ""; position: absolute; inset: 0; }
+.service:hover .service-more,
+.service-more:focus-visible { text-decoration-thickness: 3px; }
+
+/* ---------- página servicos.html ---------- */
+.svc-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2.5rem) clamp(3rem, 7vw, 5rem);
+}
+.svc-intro { margin-bottom: 2rem; }
+.svc-title {
+  margin: 0 0 .75rem;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  color: var(--cream, #f5e8da);
+}
+.svc-lede { max-width: 46rem; margin: 0; font-size: 1.1rem; color: var(--cream-soft, #dccbd9); }
+
+.svc-tabs { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2rem; }
+.svc-tab {
+  border: 2px solid var(--line, rgba(245, 232, 218, .35));
+  background: transparent;
+  color: var(--cream, #f5e8da);
+  padding: .7rem 1.1rem;
+  border-radius: 999px;
+  font: 700 1rem var(--font-body, inherit);
+  cursor: pointer;
+}
+.svc-tab:hover { border-color: var(--cream, #f5e8da); }
+.svc-tab[aria-selected="true"] { background: var(--cream, #f5e8da); color: var(--violet-900, #360248); border-color: var(--cream, #f5e8da); }
+.svc-tab:focus-visible { outline: 3px solid var(--cream, #f5e8da); outline-offset: 3px; }
+
+.svc-panel[hidden] { display: none; }
+.svc-panel-title {
+  margin: 0 0 .75rem;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--cream, #f5e8da);
+}
+.svc-summary {
+  max-width: 46rem;
+  margin: 0 0 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--cream, #f5e8da);
+}
+
+.svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2.5rem; margin-bottom: 1.75rem; }
+.svc-block { border-top: 2px solid var(--line, rgba(245, 232, 218, .35)); padding: 1.15rem 0 1.4rem; }
+.svc-block h3 { margin: 0 0 .6rem; font-size: 1.15rem; color: var(--cream, #f5e8da); }
+.svc-block p,
+.svc-block li { color: var(--cream-soft, #dccbd9); line-height: 1.6; }
+.svc-block p { margin: 0; }
+.svc-block ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .5rem; }
+
+.svc-note { max-width: 46rem; margin: 0 0 1.5rem; color: var(--cream-soft, #dccbd9); font-style: italic; }
+
+@media (max-width: 760px) {
+  .svc-grid { grid-template-columns: 1fr; }
+}
+
+/* texto só para leitores de tela (diferencia os quatro links "Ver como funciona") */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

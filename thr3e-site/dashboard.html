@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel | THR3E Web Security</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#360248">
+  <link rel="icon" type="image/png" href="IMGS/favicon.png">
+  <link rel="preload" href="FONTS/dela-gothic-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/dashboard.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="THR3E Web Security, página inicial"><img src="IMGS/logo.png" alt="THR3E Web Security" width="691" height="240"></a>
+    <button class="btn btn-ghost btn-small" type="button" id="sair">Sair</button>
+  </header>
+
+  <main class="dash" id="painel" hidden>
+    <div class="dash-head"><div><h1 class="dash-title" id="saudacao">Olá</h1><p class="account"><span id="conta-email"></span><span id="conta-desde"></span></p></div></div>
+
+    <div class="client-tabs" role="tablist" aria-label="Área do cliente">
+      <button class="client-tab active" type="button" data-tab="jobs">Pedidos</button>
+      <button class="client-tab" type="button" data-tab="meetings">Reuniões</button>
+      <button class="client-tab" type="button" data-tab="chat">Conversa</button>
+    </div>
+
+    <section class="client-view" data-view="jobs">
+      <div class="dash-grid">
+        <section class="panel-cream on-cream" aria-labelledby="titulo-nova">
+          <h2 class="title-md" id="titulo-nova">Pedir uma auditoria</h2>
+          <form id="form-auditoria" novalidate>
+            <div class="field"><label for="aud-alvo">Endereço do site ou sistema</label><input class="input" id="aud-alvo" name="target" type="url" placeholder="https://meusite.com.br" autocomplete="off" required><p class="field-error" id="aud-alvo-erro"></p></div>
+            <div class="field"><label for="aud-tipo">O que você precisa</label><select class="input" id="aud-tipo" name="type" required><option>Teste de invasão</option><option>Auditoria de código</option><option>Login e sessões</option><option>Monitoramento contínuo</option></select><p class="field-error" id="aud-tipo-erro"></p></div>
+            <div class="field"><label for="aud-detalhes">Detalhes (opcional)</label><textarea class="input" id="aud-detalhes" name="details" maxlength="1000"></textarea><p class="field-hint">Conte o que o sistema faz e o que mais preocupa você.</p><p class="field-error" id="aud-detalhes-erro"></p></div>
+            <p class="form-msg" id="aud-msg" role="alert"></p><div class="form-actions"><button class="btn btn-dark" type="submit">Enviar pedido</button></div>
+          </form>
+        </section>
+        <section aria-labelledby="titulo-lista"><h2 class="title-md" id="titulo-lista">Seus pedidos</h2><div id="lista-auditorias" aria-live="polite"></div></section>
+      </div>
+    </section>
+
+    <section class="client-view" data-view="meetings" hidden>
+      <div class="dash-grid">
+        <section class="panel-cream on-cream">
+          <h2 class="title-md">Marcar uma reunião</h2>
+          <form id="form-reuniao" novalidate>
+            <div class="meeting-grid">
+              <div class="field"><label for="meeting-title">Assunto</label><input class="input" id="meeting-title" maxlength="120" placeholder="Ex.: alinhamento da auditoria" required><p class="field-error" id="meeting-title-erro"></p></div>
+              <div class="field"><label for="meeting-date">Data e horário desejados</label><input class="input" id="meeting-date" type="datetime-local" required><p class="field-error" id="meeting-date-erro"></p></div>
+              <div class="field full"><label for="meeting-details">Observações</label><textarea class="input" id="meeting-details" maxlength="1000" placeholder="Explique o que gostaria de conversar."></textarea><p class="field-error" id="meeting-details-erro"></p></div>
+            </div>
+            <p class="form-msg" id="meeting-msg" role="alert"></p><div class="form-actions"><button class="btn btn-dark" type="submit">Solicitar reunião</button></div>
+          </form>
+        </section>
+        <section><h2 class="title-md">Suas reuniões</h2><div id="lista-reunioes" aria-live="polite"></div></section>
+      </div>
+    </section>
+
+    <section class="client-view" data-view="chat" hidden>
+      <section class="panel-cream on-cream chat-box"><div><h2 class="title-md">Conversa com a THR3E</h2><p class="field-hint">Use este espaço para tirar dúvidas e acompanhar o atendimento.</p></div><div id="chat-messages" class="chat-messages" aria-live="polite"></div><form id="chat-form" class="chat-form"><textarea class="input" id="chat-input" rows="3" maxlength="3000" placeholder="Escreva sua mensagem..." required></textarea><button class="btn btn-dark" type="submit">Enviar mensagem</button></form><p class="form-msg" id="chat-msg" role="alert"></p></section>
+    </section>
+  </main>
+
+  <script src="JAVA/api.js"></script><script src="JAVA/dashboard.js"></script>
+</body>
+</html>
